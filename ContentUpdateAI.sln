@@ -3,7 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2006
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContentUpdateAI", "ContentUpdateAI\ContentUpdateAI.csproj", "{ABD774C8-E34D-4947-A6F9-2D382FEC5B8C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContentUpdateAI.Luis", "ContentUpdateAI.Luis\ContentUpdateAI.Luis.csproj", "{EC337729-B2D9-4A45-A079-98D5B188BE88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContentUpdateAI.Services", "ContentUpdateAI.Services\ContentUpdateAI.Services.csproj", "{F1CA125F-B323-4F3F-98E8-B467BC9DCCE1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContentUpdateAI.Luis.Tests", "ContentUpdateAI.Luis.Tests\ContentUpdateAI.Luis.Tests.csproj", "{79F43E44-7261-40B8-BF7B-6922D359A359}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EC337729-B2D9-4A45-A079-98D5B188BE88} = {EC337729-B2D9-4A45-A079-98D5B188BE88}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContentUpdateAIControllers", "ContentUpdateAIControllers\ContentUpdateAIControllers.csproj", "{2FF1CA65-A404-48A3-94E9-E231EC0D465A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +20,22 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{ABD774C8-E34D-4947-A6F9-2D382FEC5B8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ABD774C8-E34D-4947-A6F9-2D382FEC5B8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{ABD774C8-E34D-4947-A6F9-2D382FEC5B8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{ABD774C8-E34D-4947-A6F9-2D382FEC5B8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC337729-B2D9-4A45-A079-98D5B188BE88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC337729-B2D9-4A45-A079-98D5B188BE88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC337729-B2D9-4A45-A079-98D5B188BE88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC337729-B2D9-4A45-A079-98D5B188BE88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1CA125F-B323-4F3F-98E8-B467BC9DCCE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1CA125F-B323-4F3F-98E8-B467BC9DCCE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1CA125F-B323-4F3F-98E8-B467BC9DCCE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1CA125F-B323-4F3F-98E8-B467BC9DCCE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79F43E44-7261-40B8-BF7B-6922D359A359}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79F43E44-7261-40B8-BF7B-6922D359A359}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79F43E44-7261-40B8-BF7B-6922D359A359}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79F43E44-7261-40B8-BF7B-6922D359A359}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FF1CA65-A404-48A3-94E9-E231EC0D465A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FF1CA65-A404-48A3-94E9-E231EC0D465A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FF1CA65-A404-48A3-94E9-E231EC0D465A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FF1CA65-A404-48A3-94E9-E231EC0D465A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
