@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ContentUpdateAI")]
+[assembly: AssemblyTitle("ContentUpdateAI.Web")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ContentUpdateAI")]
+[assembly: AssemblyProduct("ContentUpdateAI.Web")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("abd774c8-e34d-4947-a6f9-2d382fec5b8c")]
+[assembly: Guid("a7ee47d3-8dc7-4a2c-a050-539156874e9e")]
 
 // Version information for an assembly consists of the following four values:
 //

@@ -9,12 +9,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{ABD774C8-E34D-4947-A6F9-2D382FEC5B8C}</ProjectGuid>
+    <ProjectGuid>{A7EE47D3-8DC7-4A2C-A050-539156874E9E}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ContentUpdateAI</RootNamespace>
-    <AssemblyName>ContentUpdateAI</AssemblyName>
+    <RootNamespace>ContentUpdateAI.Web</RootNamespace>
+    <AssemblyName>ContentUpdateAI.Web</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -68,7 +68,14 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include=".gitignore" />
+    <Content Include="e2e\tsconfig.e2e.json" />
+    <Content Include=".editorconfig" />
+    <Content Include="angular.json" />
+    <Content Include="package-lock.json" />
+    <Content Include="package.json" />
     <None Include="packages.config" />
+    <Content Include="e2e\protractor.conf.js" />
     <Content Include="Scripts\version.json" />
     <Content Include="Scripts\errors.json" />
     <Content Include="Scripts\angular.min.js.map" />
@@ -83,6 +90,14 @@
     <Content Include="Scripts\angular-cookies.min.js.map" />
     <Content Include="Scripts\angular-aria.min.js.map" />
     <Content Include="Scripts\angular-animate.min.js.map" />
+    <Content Include="src\assets\.gitkeep" />
+    <Content Include="src\browserslist" />
+    <Content Include="src\tsconfig.app.json" />
+    <Content Include="src\tsconfig.spec.json" />
+    <Content Include="src\tslint.json" />
+    <Content Include="README.md" />
+    <Content Include="tsconfig.json" />
+    <Content Include="tslint.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -856,12 +871,20 @@
     <Content Include="Scripts\i18n\angular-locale_zh.js" />
     <Content Include="Scripts\i18n\angular-locale_zu-za.js" />
     <Content Include="Scripts\i18n\angular-locale_zu.js" />
+    <Content Include="src\app\app.component.css" />
+    <Content Include="src\app\app.component.html" />
+    <Content Include="src\favicon.ico" />
+    <Content Include="src\index.html" />
+    <Content Include="src\karma.conf.js" />
+    <Content Include="src\styles.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="e2e\src\app.e2e-spec.ts" />
+    <TypeScriptCompile Include="e2e\src\app.po.ts" />
     <TypeScriptCompile Include="Scripts\typings\angular-route\index.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-animate.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-component-router.d.ts" />
@@ -872,12 +895,20 @@
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-sanitize.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
+    <TypeScriptCompile Include="src\app\app-routing.module.ts" />
+    <TypeScriptCompile Include="src\app\app.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\app.component.ts" />
+    <TypeScriptCompile Include="src\app\app.module.ts" />
+    <TypeScriptCompile Include="src\environments\environment.prod.ts" />
+    <TypeScriptCompile Include="src\environments\environment.ts" />
+    <TypeScriptCompile Include="src\main.ts" />
+    <TypeScriptCompile Include="src\polyfills.ts" />
+    <TypeScriptCompile Include="src\test.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="app\" />
     <Folder Include="Content\Css\" />
     <Folder Include="Content\Fonts\" />
   </ItemGroup>
