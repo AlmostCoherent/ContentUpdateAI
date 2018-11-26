@@ -7,6 +7,7 @@ using System;
 
 namespace ContentUpdateAIControllers.Controllers
 {
+    [Route("/api/contentupdate")]
     public class ContentUpdate : ApiController
     {
         [HttpPost]

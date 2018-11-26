@@ -12,11 +12,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContentUpdateAI.Luis.Tests"
 		{EC337729-B2D9-4A45-A079-98D5B188BE88} = {EC337729-B2D9-4A45-A079-98D5B188BE88}
 	EndProjectSection
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContentUpdateAI.Angular7", "WebApp\ContentUpdateAI.Angular7.csproj", "{A90151A0-6778-456F-A141-F15CACC5D74E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContentUpdateAI.Web", "ContentUpdateAI.Web\ContentUpdateAI.Web.csproj", "{34D54D72-14E2-4CB1-9579-DDAF1191E011}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContentUpdateAIControllers", "ContentUpdateAIControllers\ContentUpdateAIControllers.csproj", "{2FF1CA65-A404-48A3-94E9-E231EC0D465A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContentUpdateAI.Web", "ContentUpdateAI.Web\ContentUpdateAI.Web.csproj", "{A7EE47D3-8DC7-4A2C-A050-539156874E9E}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContentUpdateAI.Angular7", "WebApp\ContentUpdateAI.Angular7.csproj", "{A90151A0-6778-456F-A141-F15CACC5D74E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContentUpdateAI.Controller", "ContentUpdateAI.Controller\ContentUpdateAI.Controller.csproj", "{B693CFC3-1CF2-4919-AB46-172EBC11EDAF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,18 +38,22 @@ Global
 		{79F43E44-7261-40B8-BF7B-6922D359A359}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79F43E44-7261-40B8-BF7B-6922D359A359}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79F43E44-7261-40B8-BF7B-6922D359A359}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2FF1CA65-A404-48A3-94E9-E231EC0D465A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2FF1CA65-A404-48A3-94E9-E231EC0D465A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2FF1CA65-A404-48A3-94E9-E231EC0D465A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2FF1CA65-A404-48A3-94E9-E231EC0D465A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A7EE47D3-8DC7-4A2C-A050-539156874E9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A7EE47D3-8DC7-4A2C-A050-539156874E9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A7EE47D3-8DC7-4A2C-A050-539156874E9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A7EE47D3-8DC7-4A2C-A050-539156874E9E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A90151A0-6778-456F-A141-F15CACC5D74E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A90151A0-6778-456F-A141-F15CACC5D74E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A90151A0-6778-456F-A141-F15CACC5D74E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A90151A0-6778-456F-A141-F15CACC5D74E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34D54D72-14E2-4CB1-9579-DDAF1191E011}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34D54D72-14E2-4CB1-9579-DDAF1191E011}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34D54D72-14E2-4CB1-9579-DDAF1191E011}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34D54D72-14E2-4CB1-9579-DDAF1191E011}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FF1CA65-A404-48A3-94E9-E231EC0D465A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FF1CA65-A404-48A3-94E9-E231EC0D465A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FF1CA65-A404-48A3-94E9-E231EC0D465A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FF1CA65-A404-48A3-94E9-E231EC0D465A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B693CFC3-1CF2-4919-AB46-172EBC11EDAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B693CFC3-1CF2-4919-AB46-172EBC11EDAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B693CFC3-1CF2-4919-AB46-172EBC11EDAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B693CFC3-1CF2-4919-AB46-172EBC11EDAF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
