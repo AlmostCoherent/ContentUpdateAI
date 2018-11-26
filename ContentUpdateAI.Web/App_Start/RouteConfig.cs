@@ -18,7 +18,7 @@ namespace ContentUpdateAI.Web
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
-                namespaces: new[] { "ContentUpdateAI.Web.Controllers", "ContentUpdateAI.Controller" }
+                namespaces: new[] { "ContentUpdateAI.Controller", "ContentUpdateAI.Web.Controllers" }
             );
         }
     }
