@@ -132,12 +132,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ContentUpdateAI.Luis\ContentUpdateAI.Luis.csproj">
-      <Project>{ec337729-b2d9-4a45-a079-98d5b188be88}</Project>
-      <Name>ContentUpdateAI.Luis</Name>
-    </ProjectReference>
-  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

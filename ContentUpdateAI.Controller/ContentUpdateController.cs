@@ -1,13 +1,15 @@
-﻿using System.Web.Mvc;
+﻿using ContentUpdateAI.LuisService;
+using System.Threading.Tasks;
+using System.Web.Mvc;
 
 namespace ContentUpdateAI.Controller
 {
     public class ContentUpdateController : System.Web.Mvc.Controller
     {
-        [Route("contentupdate/v1/get")]
-        public string Get()
+        [Route("contentupdate/v1/check-composite")]
+        public string CheckForCompositeEntityMatch(string query)
         {
-            return "This was returned";
+            return LuisService.LuisService.GetCompositeResponse(query);
         }
     }
 }

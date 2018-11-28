@@ -3,7 +3,7 @@ using System.Collections.Specialized;
 using System.IO;
 using System.Net;
 
-namespace ContentUpdateAI.BusinessServices
+namespace ContentUpdateAI.Services
 {
     public static class GetHttpResponse
     {
