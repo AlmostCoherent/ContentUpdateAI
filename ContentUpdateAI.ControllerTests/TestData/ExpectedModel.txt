@@ -1,0 +1,68 @@
+﻿{
+  "query": "Line 6 update from \"this\" to \"that\"",
+  "topScoringIntent": {
+    "intent": "UpdateContent",
+    "score": 0.986139953
+  },
+  "entities": [
+    {
+      "entity": "line 6",
+      "type": "LineToUpdate",
+      "startIndex": 0,
+      "endIndex": 5,
+      "score": 0.962489843
+    },
+    {
+      "entity": "to",
+      "type": "ReplaceWithAction",
+      "startIndex": 26,
+      "endIndex": 27,
+      "score": 0.822699547
+    },
+    {
+      "entity": "this",
+      "type": "UpdateFrom",
+      "startIndex": 20,
+      "endIndex": 23,
+      "score": 0.8400604
+    },
+    {
+      "entity": "that",
+      "type": "UpdateTo",
+      "startIndex": 30,
+      "endIndex": 33,
+      "score": 0.9168957
+    },
+    {
+      "entity": "line 6 update from \" this \" to \" that",
+      "type": "replaceinstruction",
+      "startIndex": 0,
+      "endIndex": 33,
+      "score": 0.961801052
+    }
+  ],
+  "compositeEntities": [
+    {
+      "parentType": "replaceinstruction",
+      "value": "line 6 update from \" this \" to \" that",
+      "children": [
+        {
+          "type": "LineToUpdate",
+          "value": "line 6"
+        },
+        {
+          "type": "ReplaceWithAction",
+          "value": "to"
+        },
+        {
+          "type": "UpdateFrom",
+          "value": "this"
+        },
+        {
+          "type": "UpdateTo",
+          "value": "that"
+        }
+      ]
+    }
+  ]
+}

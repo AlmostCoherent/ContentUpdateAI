@@ -1,5 +1,6 @@
 using System;
 using Xunit;
+using ContentUpdateAI.LuisService;
 
 namespace ContentUpdateAI.Luis.Tests
 {
@@ -9,7 +10,8 @@ namespace ContentUpdateAI.Luis.Tests
         public void GetLuisReponseTest()
         {
             string query = @"Line 16 remove ""This"" and replace with ""That""";
-            //LuisModel response = GetLuisResponse.GetLuisIntent(query);
+            string response = LuisEndPoints.GetCompositeResponse(query);
+            string expectedModel = System.IO.File.ReadAllText("");
         }
     }
 }

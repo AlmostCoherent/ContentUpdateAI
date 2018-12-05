@@ -1,6 +1,6 @@
 ﻿namespace ContentUpdateAI.LuisService
 {
-    public static class LuisService
+    public static class LuisEndPoints
     {
         public static string GetCompositeResponse(string query)
         {
