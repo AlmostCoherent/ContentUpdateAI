@@ -9,23 +9,39 @@ import { ApiService } from '../app/services/api.service';
 })
 export class AppComponent {
   title = 'AngularMVC';
-  public luisResult: any;
-  public luisUrl: any;
-  public temp: string = "";
+  private luisResult: any;
+  private luisLinesToCheck: string[] = [];
+  private luisUrl: any;
 
   ngOnInit() {
-    this.luisResult = "Tadaaaa!";
   }
 
-  public GetLuisResult(luisQuery: any) {
-    this.apiService.getData('/contentupdate/v1/check-composite', luisQuery).subscribe((data: Array<object>) => {
-      this.luisResult = data;
-      console.log(data);
-    });
-    //this.luisResult = this.http.get("/contentupdate/v1/check-composite", { params: { query: luisQuery.value["luis-query"] } })
-    //  .subscribe(result => { this.luisResult = JSON.stringify(result) },
-    //    error => console.log(error));
+  private AddToLuisCheck(newLineToCheck: any) {
+    this.luisLinesToCheck.push(newLineToCheck.value["luis-query"]);
+  }
 
+  private GetLuisResult() {
+    if (this.luisLinesToCheck.length > 0) {
+      this.http.post('/contentupdate/v1/check-composite', this.luisLinesToCheck)
+        .subscribe(
+          (val) => {
+            console.log("POST call successful value returned in body",
+              val);
+          },
+          response => {
+            console.log("POST call in error", response);
+          },
+          () => {
+            console.log("The POST observable is now completed.");
+          }
+        )
+      //this.apiService.postData('/contentupdate/v1/check-composite', this.luisLinesToCheck).subscribe((data: Array<object>) => {
+      //  this.luisResult = data;
+      //});
+    }
+    else {
+      this.luisResult = ["Sorry, no results returned."];
+    }
     console.log("Result: ", this.luisResult);
   }
 
