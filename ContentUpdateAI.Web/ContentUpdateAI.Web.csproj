@@ -164,13 +164,6 @@
     <Content Include=".gitignore" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="dist\ContentUpdateAI.Web\favicon.ico" />
-    <Content Include="dist\ContentUpdateAI.Web\index.html" />
-    <Content Include="dist\ContentUpdateAI.Web\main.js" />
-    <Content Include="dist\ContentUpdateAI.Web\polyfills.js" />
-    <Content Include="dist\ContentUpdateAI.Web\runtime.js" />
-    <Content Include="dist\ContentUpdateAI.Web\styles.js" />
-    <Content Include="dist\ContentUpdateAI.Web\vendor.js" />
     <Content Include="e2e\protractor.conf.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -187,11 +180,6 @@
     <Content Include="package-lock.json" />
     <Content Include="package.json" />
     <Content Include="README.md" />
-    <Content Include="dist\ContentUpdateAI.Web\main.js.map" />
-    <Content Include="dist\ContentUpdateAI.Web\polyfills.js.map" />
-    <Content Include="dist\ContentUpdateAI.Web\runtime.js.map" />
-    <Content Include="dist\ContentUpdateAI.Web\styles.js.map" />
-    <Content Include="dist\ContentUpdateAI.Web\vendor.js.map" />
     <Content Include="Connected Services\Application Insights\ConnectedService.json" />
     <Content Include="Content\scss\app.scss" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -236,7 +224,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="src\app\models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -257,6 +244,7 @@
     <TypeScriptCompile Include="src\app\app.component.spec.ts" />
     <TypeScriptCompile Include="src\app\app.component.ts" />
     <TypeScriptCompile Include="src\app\app.module.ts" />
+    <TypeScriptCompile Include="src\app\models\luisResponseModel.ts" />
     <TypeScriptCompile Include="src\app\services\api.service.spec.ts" />
     <TypeScriptCompile Include="src\app\services\api.service.ts" />
     <TypeScriptCompile Include="src\environments\environment.prod.ts" />

@@ -7,9 +7,9 @@ namespace ContentUpdateAI.Controller
     public class ContentUpdateController : System.Web.Mvc.Controller
     {
         [Route("contentupdate/v1/check-composite")]
-        public string CheckForCompositeEntityMatch(string query)
+        public string CheckForCompositeEntityMatch(string[] query)
         {
-            return LuisEndPoints.GetCompositeResponse(query);
+            return LuisEndPoints.GetCompositeResponse(query.ToString());
         }
     }
 }
