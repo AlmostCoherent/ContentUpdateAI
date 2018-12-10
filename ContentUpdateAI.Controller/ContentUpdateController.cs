@@ -9,7 +9,7 @@ namespace ContentUpdateAI.Controller
         [Route("contentupdate/v1/check-composite")]
         public string CheckForCompositeEntityMatch(string[] query)
         {
-            return LuisEndPoints.GetCompositeResponse(query.ToString());
+            return LuisEndPoints.GetCompositeResponse(query);
         }
     }
 }

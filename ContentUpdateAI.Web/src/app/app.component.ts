@@ -12,6 +12,7 @@ export class AppComponent {
   private luisResult: any;
   private luisLinesToCheck: string[] = [];
   private luisUrl: any;
+  private labelForInput: string = "Enter update instruction:";
 
   ngOnInit() {
   }
@@ -43,6 +44,10 @@ export class AppComponent {
       this.luisResult = ["Sorry, no results returned."];
     }
     console.log("Result: ", this.luisResult);
+  }
+
+  private RemoveItemFromArray(indexer: number) {
+    this.luisLinesToCheck.splice(indexer, 1);
   }
 
   constructor(private http: HttpClient, private apiService: ApiService) {
