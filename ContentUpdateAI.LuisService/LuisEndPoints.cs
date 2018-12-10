@@ -2,7 +2,7 @@
 {
     public static class LuisEndPoints
     {
-        public static string GetCompositeResponse(string query)
+        public static string GetCompositeResponse(string[] query)
         {
             return GetLuisResponse.GetLuisIntent(query).ToString();
         }

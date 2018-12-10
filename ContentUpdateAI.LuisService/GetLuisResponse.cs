@@ -11,15 +11,25 @@ namespace ContentUpdateAI.LuisService
         private static string _luisUrl = "https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/" + _luisAppId  + "?";
         private static string _subscriptionKey = "e8ed78ec10214dbaa87d3721e6017e28";
 
-        public static string GetLuisIntent(string userStringQuery)
+        public static string[] GetLuisIntent(string[] userStringQuery)
         {
+            int lengthOfQueries = userStringQuery.Length;
+            string[] returnResponse = new string[lengthOfQueries];
 
-            System.Collections.Specialized.NameValueCollection queryString = GetLuisQueryString(userStringQuery);
+            for(int i = 0; i < userStringQuery.Length; i++)
+            {
+                System.Collections.Specialized.NameValueCollection queryString = GetLuisQueryString(userStringQuery[i]);
 
-            string jsonResponse = GetHttpResponse.GetJsonResponse(_luisUrl, queryString);
+                string jsonResponse = GetHttpResponse.GetJsonResponse(_luisUrl, queryString);
+                LuisModel luisModel = JsonConvert.DeserializeObject<LuisModel>(jsonResponse);
+                string compositeResponse = JsonConvert.SerializeObject(luisModel.CompositeEntities);
+
+                returnResponse[i] = compositeResponse;
+            }
+
             //LuisModel luisModel = JsonConvert.DeserializeObject<LuisModel>(jsonResponse);
 
-            return jsonResponse;
+            return returnResponse;
         }
 
         private static System.Collections.Specialized.NameValueCollection GetLuisQueryString(string userStringQuery)
