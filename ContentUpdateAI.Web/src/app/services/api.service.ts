@@ -4,6 +4,8 @@ import { Response, RequestOptions } from "@angular/http";
 import { Observable } from 'rxjs/internal/Observable';
 import { catchError } from 'rxjs/operators';
 
+import { CompositeEntities } from '../models/luisResponseModel';
+
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json'
@@ -25,10 +27,8 @@ export class ApiService {
     return Observable.throw(error.statusText);
   }
 
-  postData(url: string, postObj: any) {
-    return this.httpClient.post(url, postObj, httpOptions)
-      .pipe(catchError(this.handleError(postObj))
-    );
+  postData(url: string, postObj: any): Observable<CompositeEntities> {
+    return this.httpClient.post<CompositeEntities>(url, postObj, httpOptions)
   }
 
   getData(url: string, postQuery: string) {

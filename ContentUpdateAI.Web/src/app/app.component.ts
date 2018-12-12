@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ApiService } from '../app/services/api.service';
 
+import { CompositeEntities } from './models/luisResponseModel';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,7 +11,7 @@ import { ApiService } from '../app/services/api.service';
 })
 export class AppComponent {
   title = 'AngularMVC';
-  private luisResult: any;
+  private luisResult: CompositeEntities;
   private luisLinesToCheck: string[] = [];
   private luisUrl: any;
   private labelForInput: string = "Enter update instruction:";
@@ -23,25 +25,26 @@ export class AppComponent {
 
   private GetLuisResult() {
     if (this.luisLinesToCheck.length > 0) {
-      this.http.post('/contentupdate/v1/check-composite', this.luisLinesToCheck)
-        .subscribe(
-          (val) => {
-            console.log("POST call successful value returned in body",
-              val);
-          },
-          response => {
-            console.log("POST call in error", response);
-          },
-          () => {
-            console.log("The POST observable is now completed.");
-          }
-        )
+      this.apiService.postData('/contentupdate/v1/check-composite', this.luisLinesToCheck)
+          .subscribe(
+              data => this.luisResult = data
+        );
+      //this.http.post('/contentupdate/v1/check-composite', this.luisLinesToCheck)
+      //  .subscribe(
+      //    (val) => {
+      //      console.log("POST call successful value returned in body",
+      //        val);
+      //    },
+      //    response => {
+      //      console.log("POST call in error", response);
+      //    },
+      //    () => {
+      //      console.log("The POST observable is now completed.");
+      //    }
+        //)
       //this.apiService.postData('/contentupdate/v1/check-composite', this.luisLinesToCheck).subscribe((data: Array<object>) => {
       //  this.luisResult = data;
       //});
-    }
-    else {
-      this.luisResult = ["Sorry, no results returned."];
     }
     console.log("Result: ", this.luisResult);
   }
