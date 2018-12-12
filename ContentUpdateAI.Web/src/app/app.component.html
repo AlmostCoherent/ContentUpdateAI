@@ -12,6 +12,9 @@
 </div>
 
 <div class="luis-display">
-  <div *ngFor="let item of luisLinesToCheck; let i = index" >{{ item }} -- <div class="luis-remove" (click)="RemoveItemFromArray(i)">X</div></div>
+  <div *ngFor="let item of luisLinesToCheck; let i = index" >{{ item }} <div class="luis-remove" (click)="RemoveItemFromArray(i)">X</div></div>
   <button class="btn btn-primary" (click)="GetLuisResult()">Check for Luis matches</button>
+</div>
+<div ng-if="this.luisResult" class="luis-display">
+  <div *ngFor="let item of luisResult; let i = index">{{ item }}</div>
 </div>
