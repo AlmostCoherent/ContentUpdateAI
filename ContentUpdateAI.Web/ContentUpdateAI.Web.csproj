@@ -247,6 +247,7 @@
     <TypeScriptCompile Include="src\app\app.component.spec.ts" />
     <TypeScriptCompile Include="src\app\app.component.ts" />
     <TypeScriptCompile Include="src\app\app.module.ts" />
+    <TypeScriptCompile Include="src\app\models\contentModel.ts" />
     <TypeScriptCompile Include="src\app\models\luisResponseModel.ts" />
     <TypeScriptCompile Include="src\app\services\api.service.spec.ts" />
     <TypeScriptCompile Include="src\app\services\api.service.ts" />

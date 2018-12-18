@@ -1,6 +1,7 @@
 ﻿using ContentUpdateAI.Services;
 using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 using System.Web;
 
 namespace ContentUpdateAI.LuisService
@@ -14,7 +15,7 @@ namespace ContentUpdateAI.LuisService
         public static string GetLuisIntent(string[] userStringQuery)
         {
             int lengthOfQueries = userStringQuery.Length;
-            string[] returnResponse = new string[lengthOfQueries];
+            List<LuisModel> returnResponse = new List<LuisModel>();
 
             for(int i = 0; i < userStringQuery.Length; i++)
             {
@@ -22,9 +23,7 @@ namespace ContentUpdateAI.LuisService
 
                 string jsonResponse = GetHttpResponse.GetJsonResponse(_luisUrl, queryString);
                 LuisModel luisModel = JsonConvert.DeserializeObject<LuisModel>(jsonResponse);
-                string compositeResponse = JsonConvert.SerializeObject(luisModel.CompositeEntities);
-
-                returnResponse[i] = compositeResponse;
+                returnResponse.Add(luisModel);
             }
 
             //LuisModel luisModel = JsonConvert.DeserializeObject<LuisModel>(jsonResponse);
