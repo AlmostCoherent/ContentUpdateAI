@@ -27,7 +27,7 @@ export class ApiService {
     return Observable.throw(error.statusText);
   }
 
-  postData(url: string, postObj: any): Observable<CompositeEntities> {
+  postDataAndReturnCompositeEntitie(url: string, postObj: any): Observable<CompositeEntities> {
     return this.httpClient.post<CompositeEntities>(url, postObj, httpOptions)
   }
 
