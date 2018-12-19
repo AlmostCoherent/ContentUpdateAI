@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -28,12 +28,7 @@
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
     </div>
-
-    <script type="text/javascript" src="~/dist/AngularMVC/runtime.js"></script>
-    <script type="text/javascript" src="~/dist/AngularMVC/polyfills.js"></script>
-    <script type="text/javascript" src="~/dist/AngularMVC/styles.js"></script>
-    <script type="text/javascript" src="~/dist/AngularMVC/vendor.js"></script>
-    <script type="text/javascript" src="~/dist/AngularMVC/main.js"></script>
+    @Scripts.Render("~/scripts/app")
     @RenderSection("scripts", required: false)
 </body>
 </html>
