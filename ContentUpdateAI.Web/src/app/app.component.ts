@@ -20,6 +20,8 @@ export class AppComponent {
 
   ngOnInit() {
     this.content = [
+
+      new Content(1, "GoF Definition"),
       new Content(1, "GoF Definition"),
       new Content(2, "This chapter covers the Singleton pattern."),
       new Content(3, "GoF Definition"),

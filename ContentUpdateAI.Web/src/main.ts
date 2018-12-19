@@ -8,5 +8,9 @@ if (environment.production) {
   enableProdMode();
 }
 
+var i = "";
+
+var tep = "new string";
+
 platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.error(err));
