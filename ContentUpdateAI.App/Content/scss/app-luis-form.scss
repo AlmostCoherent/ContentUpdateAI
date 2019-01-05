@@ -1,0 +1,53 @@
+@import 'site-variables.scss';
+
+.luis-form {
+  text-align: center;
+
+  label {
+    color: $tertiary-colour;
+  }
+
+  input {
+    max-width: 100%;
+  }
+
+  button {
+    margin-top: $small-margin;
+    margin-bottom: $small-margin;
+  }
+}
+
+.luis-display {
+  width: 100%;
+  padding: 2px 5px;
+  margin-top: $small-margin;
+  margin-bottom: $small-margin;
+  line-height: 20px;
+  text-align: center;
+  border-radius: $small-border-radius;
+
+
+  & > div {
+    border-radius: $small-border-radius;
+    background-color: $secondary-colour;
+    margin-top: $small-margin;
+    line-height: 30px;
+    border: 1px solid $tertiary-colour;
+    vertical-align: middle;
+  }
+
+  & > button {
+    margin: 0 auto;
+    margin-top: $small-margin;
+    padding-top: 5px;
+    width: 200px;
+  }
+
+  .luis-remove {
+    float: right;
+    padding-right: 5px;
+    padding-left: 5px;
+    color: red;
+    cursor: pointer;
+  }
+}
