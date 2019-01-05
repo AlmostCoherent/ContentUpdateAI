@@ -185,6 +185,11 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include=".editorconfig" />
+    <Content Include="out-tsc\app\app.component.js" />
+    <Content Include="out-tsc\app\app.module.js" />
+    <Content Include="out-tsc\app\models\contentModel.js" />
+    <Content Include="out-tsc\app\services\api.service.js" />
+    <Content Include="out-tsc\main.js" />
     <Content Include="package-lock.json" />
     <Content Include="package.json" />
     <Content Include="README.md" />
@@ -195,13 +200,9 @@
     <Content Include="Content\scss\main.scss" />
     <Content Include="src\app\app.component.css" />
     <Content Include="src\app\app.component.html" />
-    <Content Include="src\app\app.component.js" />
-    <Content Include="src\app\app.module.js" />
-    <Content Include="src\app\services\api.service.js" />
     <Content Include="src\favicon.ico" />
     <Content Include="src\index.html" />
     <Content Include="src\karma.conf.js" />
-    <Content Include="src\main.js" />
     <Content Include="src\styles.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -235,18 +236,19 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="out-tsc\app\app.component.js.map" />
+    <Content Include="out-tsc\app\app.module.js.map" />
+    <Content Include="out-tsc\app\models\contentModel.js.map" />
+    <Content Include="out-tsc\app\services\api.service.js.map" />
+    <Content Include="out-tsc\main.js.map" />
     <None Include="packages.config" />
-    <Content Include="src\app\services\api.service.js.map" />
-    <Content Include="src\app\app.component.js.map" />
-    <Content Include="src\app\app.module.js.map" />
-    <Content Include="src\main.js.map" />
+    <Content Include="systemjs.config.js" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="src\app\app.component.ts" />
     <TypeScriptCompile Include="src\app\app.module.ts" />
     <TypeScriptCompile Include="src\app\models\contentModel.ts" />
     <TypeScriptCompile Include="src\app\models\luisResponseModel.ts" />
-    <TypeScriptCompile Include="src\app\services\api.service.spec.ts" />
     <TypeScriptCompile Include="src\app\services\api.service.ts" />
     <TypeScriptCompile Include="src\environments\environment.prod.ts" />
     <TypeScriptCompile Include="src\environments\environment.ts" />
