@@ -1,0 +1,45 @@
+﻿body {
+  background-color: #063E4C; }
+
+.luis-form {
+  text-align: center; }
+  .luis-form label {
+    color: #fff; }
+  .luis-form input {
+    max-width: 100%; }
+  .luis-form button {
+    margin-top: 10px;
+    margin-bottom: 10px; }
+
+.luis-display {
+  width: 100%;
+  padding: 2px 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  line-height: 20px;
+  text-align: center;
+  border-radius: 5px; }
+  .luis-display > div {
+    border-radius: 5px;
+    background-color: #8FC5DF;
+    margin-top: 10px;
+    line-height: 30px;
+    border: 1px solid #fff;
+    vertical-align: middle; }
+  .luis-display > button {
+    margin: 0 auto;
+    margin-top: 10px;
+    padding-top: 5px;
+    width: 200px; }
+  .luis-display .luis-remove {
+    float: right;
+    padding-right: 5px;
+    padding-left: 5px;
+    color: red;
+    cursor: pointer; }
+  .luis-display del {
+    color: red;
+    font-weight: bold; }
+  .luis-display ins {
+    color: lawngreen;
+    font-weight: bold; }

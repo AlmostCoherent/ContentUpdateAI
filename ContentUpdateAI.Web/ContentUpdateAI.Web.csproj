@@ -40,6 +40,19 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <TypeScriptTarget>ES2017</TypeScriptTarget>
+    <TypeScriptJSXEmit>None</TypeScriptJSXEmit>
+    <TypeScriptModuleKind>ES6</TypeScriptModuleKind>
+    <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
+    <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
+    <TypeScriptRemoveComments>False</TypeScriptRemoveComments>
+    <TypeScriptOutFile />
+    <TypeScriptOutDir />
+    <TypeScriptGeneratesDeclarations>False</TypeScriptGeneratesDeclarations>
+    <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
+    <TypeScriptSourceMap>True</TypeScriptSourceMap>
+    <TypeScriptMapRoot />
+    <TypeScriptSourceRoot />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -164,46 +177,27 @@
     <Content Include=".gitignore" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="dist\ContentUpdateAI.Web\favicon.ico" />
-    <Content Include="dist\ContentUpdateAI.Web\index.html" />
-    <Content Include="dist\ContentUpdateAI.Web\main.js" />
-    <Content Include="dist\ContentUpdateAI.Web\polyfills.js" />
-    <Content Include="dist\ContentUpdateAI.Web\runtime.js" />
-    <Content Include="dist\ContentUpdateAI.Web\styles.js" />
-    <Content Include="dist\ContentUpdateAI.Web\vendor.js" />
-    <Content Include="e2e\protractor.conf.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include=".editorconfig" />
-    <Content Include="angular.json" />
-    <Content Include="e2e\tsconfig.e2e.json" />
+    <Content Include="out-tsc\app\app.component.js" />
+    <Content Include="out-tsc\app\app.module.js" />
+    <Content Include="out-tsc\app\models\contentModel.js" />
+    <Content Include="out-tsc\app\services\api.service.js" />
+    <Content Include="out-tsc\main.js" />
     <Content Include="package-lock.json" />
     <Content Include="package.json" />
     <Content Include="README.md" />
-    <Content Include="dist\ContentUpdateAI.Web\main.js.map" />
-    <Content Include="dist\ContentUpdateAI.Web\polyfills.js.map" />
-    <Content Include="dist\ContentUpdateAI.Web\runtime.js.map" />
-    <Content Include="dist\ContentUpdateAI.Web\styles.js.map" />
-    <Content Include="dist\ContentUpdateAI.Web\vendor.js.map" />
     <Content Include="Connected Services\Application Insights\ConnectedService.json" />
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Scripts\respond.js" />
-    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Content\scss\app.scss" />
+    <Content Include="Content\scss\app-luis-form.scss" />
+    <Content Include="Content\scss\site-variables.scss" />
+    <Content Include="Content\scss\main.scss" />
     <Content Include="src\app\app.component.css" />
     <Content Include="src\app\app.component.html" />
     <Content Include="src\favicon.ico" />
@@ -226,11 +220,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="src\assets\.gitkeep" />
     <Content Include="src\browserslist" />
-    <Content Include="src\tsconfig.app.json" />
-    <Content Include="src\tsconfig.spec.json" />
-    <Content Include="src\tslint.json" />
-    <Content Include="tsconfig.json" />
-    <Content Include="tslint.json" />
+    <Content Include="src\tsconfig.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -246,15 +236,20 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="out-tsc\app\app.component.js.map" />
+    <Content Include="out-tsc\app\app.module.js.map" />
+    <Content Include="out-tsc\app\models\contentModel.js.map" />
+    <Content Include="out-tsc\app\services\api.service.js.map" />
+    <Content Include="out-tsc\main.js.map" />
     <None Include="packages.config" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="systemjs.config.js" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="e2e\src\app.e2e-spec.ts" />
-    <TypeScriptCompile Include="e2e\src\app.po.ts" />
-    <TypeScriptCompile Include="src\app\app.component.spec.ts" />
     <TypeScriptCompile Include="src\app\app.component.ts" />
     <TypeScriptCompile Include="src\app\app.module.ts" />
+    <TypeScriptCompile Include="src\app\models\contentModel.ts" />
+    <TypeScriptCompile Include="src\app\models\luisResponseModel.ts" />
+    <TypeScriptCompile Include="src\app\services\api.service.ts" />
     <TypeScriptCompile Include="src\environments\environment.prod.ts" />
     <TypeScriptCompile Include="src\environments\environment.ts" />
     <TypeScriptCompile Include="src\main.ts" />
@@ -310,7 +305,8 @@
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
   </Target>
   <PropertyGroup>
-    <PreBuildEvent>(ng build)</PreBuildEvent>
+    <PreBuildEvent>
+    </PreBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

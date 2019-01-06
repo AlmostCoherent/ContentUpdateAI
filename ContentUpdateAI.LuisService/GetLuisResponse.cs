@@ -1,6 +1,7 @@
 ﻿using ContentUpdateAI.Services;
 using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 using System.Web;
 
 namespace ContentUpdateAI.LuisService
@@ -11,22 +12,28 @@ namespace ContentUpdateAI.LuisService
         private static string _luisUrl = "https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/" + _luisAppId  + "?";
         private static string _subscriptionKey = "e8ed78ec10214dbaa87d3721e6017e28";
 
-        public static string GetLuisIntent(string userStringQuery)
+        public static List<LuisModel> GetLuisIntent(string[] userStringQuery)
         {
+            int lengthOfQueries = userStringQuery.Length;
+            List<LuisModel> returnResponse = new List<LuisModel>();
 
-            System.Collections.Specialized.NameValueCollection queryString = GetLuisQueryString(userStringQuery);
+            for(int i = 0; i < userStringQuery.Length; i++)
+            {
+                System.Collections.Specialized.NameValueCollection queryString = GetLuisQueryString(userStringQuery[i]);
 
-            string jsonResponse = GetHttpResponse.GetJsonResponse(_luisUrl, queryString);
-            //LuisModel luisModel = JsonConvert.DeserializeObject<LuisModel>(jsonResponse);
+                string jsonResponse = GetHttpResponse.GetJsonResponse(_luisUrl, queryString);
+                LuisModel luisModel = JsonConvert.DeserializeObject<LuisModel>(jsonResponse);
+                returnResponse.Add(luisModel);
+            }
 
-            return jsonResponse;
+            return returnResponse;
         }
 
         private static System.Collections.Specialized.NameValueCollection GetLuisQueryString(string userStringQuery)
         {
             var queryString = HttpUtility.ParseQueryString(string.Empty);
 
-            queryString["q"] = userStringQuery; //Uri.EscapeUriString(userStringQuery);//HttpUtility.UrlEncode(userStringQuery);
+            queryString["q"] = userStringQuery;
             queryString["subscription-key"] = _subscriptionKey;
             queryString["timezoneOffset"] = "0";
             queryString["verbose"] = "false";
