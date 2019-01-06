@@ -41,7 +41,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"luis-form\">\r\n  <form #luisForm=\"ngForm\" (ngSubmit)=\"AddToLuisCheck(luisForm.form)\">\r\n    <label for=\"luis-query\">{{ this.labelForInput }}</label>\r\n    <input type=\"text\"\r\n           class=\"form-control\"\r\n           name=\"luis-query\"\r\n           ngModel\r\n           minlength=\"3\"\r\n           #nameField=\"ngModel\" />\r\n    <button class=\"btn btn-primary\">Submit</button>\r\n  </form>\r\n</div>\r\n\r\n<div class=\"luis-display\">\r\n  <div *ngFor=\"let item of luisLinesToCheck; let i = index\" >{{ item }} <div class=\"luis-remove\" (click)=\"RemoveItemFromArray(i)\">X</div></div>\r\n  <button class=\"btn btn-primary\" (click)=\"GetLuisResult()\">Check for Luis matches</button>\r\n</div>\r\n<div ng-if=\"this.luisResult\" class=\"luis-display\">\r\n  <div *ngFor=\"let item of luisResult; let i = index\">{{ item }}</div>\r\n</div>\r\n"
+module.exports = "<div class=\"luis-display\">\r\n  <div *ngFor=\"let item of content;\">{{ item.lineNumber }} :: {{ item.content}}</div>\r\n</div>\r\n\r\n<div class=\"luis-form\">\r\n  <form #luisForm=\"ngForm\" (ngSubmit)=\"AddToLuisCheck(luisForm.form)\">\r\n    <label for=\"luis-query\">{{ this.labelForInput }}</label>\r\n    <input type=\"text\"\r\n           class=\"form-control\"\r\n           name=\"luis-query\"\r\n           ngModel\r\n           minlength=\"3\"\r\n           #nameField=\"ngModel\" />\r\n    <button class=\"btn btn-primary\">Submit</button>\r\n  </form>\r\n</div>\r\n\r\n<div class=\"luis-display\">\r\n  <div *ngFor=\"let item of luisLinesToCheck; let i = index\" >{{ item }} <div class=\"luis-remove\" (click)=\"RemoveItemFromArray(i)\">X</div></div>\r\n  <button class=\"btn btn-primary\" (click)=\"GetLuisResult()\">Check for Luis matches</button>\r\n</div>\r\n<div ng-if=\"this.changedLuisResults\" class=\"luis-display\">\r\n  <div *ngFor=\"let item of changedLuisResults\">{{ item.lineNumber }} :: <span [innerHTML]=\"item.changeToContent\"></span></div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -56,9 +56,9 @@ module.exports = "<div class=\"luis-form\">\r\n  <form #luisForm=\"ngForm\" (ngS
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var _app_services_api_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../app/services/api.service */ "./src/app/services/api.service.ts");
-/* harmony import */ var _models_contentModel__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./models/contentModel */ "./src/app/models/contentModel.ts");
+/* harmony import */ var _app_services_api_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../app/services/api.service */ "./src/app/services/api.service.ts");
+/* harmony import */ var _models_contentModel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./models/contentModel */ "./src/app/models/contentModel.ts");
+/* harmony import */ var _models_enums__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./models/enums */ "./src/app/models/enums.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -73,8 +73,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 var AppComponent = /** @class */ (function () {
-    function AppComponent(http, apiService) {
-        this.http = http;
+    function AppComponent(apiService) {
         this.apiService = apiService;
         this.title = 'AngularMVC';
         this.luisLinesToCheck = [];
@@ -82,34 +81,49 @@ var AppComponent = /** @class */ (function () {
     }
     AppComponent.prototype.ngOnInit = function () {
         this.content = [
-            new _models_contentModel__WEBPACK_IMPORTED_MODULE_3__["Content"](1, "GoF Definition"),
-            new _models_contentModel__WEBPACK_IMPORTED_MODULE_3__["Content"](1, "GoF Definition"),
-            new _models_contentModel__WEBPACK_IMPORTED_MODULE_3__["Content"](2, "This chapter covers the Singleton pattern."),
-            new _models_contentModel__WEBPACK_IMPORTED_MODULE_3__["Content"](3, "GoF Definition"),
-            new _models_contentModel__WEBPACK_IMPORTED_MODULE_3__["Content"](4, "Ensure a class has only one instance, and provide a global point of access to it."),
-            new _models_contentModel__WEBPACK_IMPORTED_MODULE_3__["Content"](5, "Concept"),
-            new _models_contentModel__WEBPACK_IMPORTED_MODULE_3__["Content"](6, "A particular class should have only one instance. You can use this instance whenever "),
-            new _models_contentModel__WEBPACK_IMPORTED_MODULE_3__["Content"](7, "you need it and therefore avoid creating unnecessary objects."),
+            new _models_contentModel__WEBPACK_IMPORTED_MODULE_2__["Content"](1, "GoF Definition"),
+            new _models_contentModel__WEBPACK_IMPORTED_MODULE_2__["Content"](2, "This chapter covers the Singleton pattern."),
+            new _models_contentModel__WEBPACK_IMPORTED_MODULE_2__["Content"](3, "GoF Definition"),
+            new _models_contentModel__WEBPACK_IMPORTED_MODULE_2__["Content"](4, "Ensure a class has only one instance, and provide a global point of access to it."),
+            new _models_contentModel__WEBPACK_IMPORTED_MODULE_2__["Content"](5, "Concept"),
+            new _models_contentModel__WEBPACK_IMPORTED_MODULE_2__["Content"](6, "A particular class should have only one instance. You can use this instance whenever "),
+            new _models_contentModel__WEBPACK_IMPORTED_MODULE_2__["Content"](7, "you need it and therefore avoid creating unnecessary objects."),
         ];
     };
     AppComponent.prototype.AddToLuisCheck = function (newLineToCheck) {
         this.luisLinesToCheck.push(newLineToCheck.value["luis-query"]);
+        newLineToCheck.reset();
     };
     AppComponent.prototype.GetLuisResult = function () {
         var _this = this;
         if (this.luisLinesToCheck.length > 0) {
-            this.apiService.postDataAndReturnCompositeEntitie('/contentupdate/v1/check-composite', this.luisLinesToCheck)
-                .subscribe(function (data) { return _this.luisResult = data; });
-            console.log('this.Content: ', this.content);
-            console.log('this.luisResult: ', this.luisResult);
-            this.ProcessLuisResponseAndChanges(this.content, this.luisResult);
+            this.apiService.postDataAndReturnCompositeEntitie('/contentupdate/v1/check-composite', this.luisLinesToCheck, _models_enums__WEBPACK_IMPORTED_MODULE_3__["LuisRequestType"].CompositeEntity)
+                .subscribe(function (data) {
+                _this.luisResult = data;
+                _this.ProcessLuisResponseAndChanges(_this.luisResult);
+                //this.luisResult = data,
+                //  console.log("data: ", data, "luisResult: ", this.luisResult)
+            });
+            //      this.ProcessLuisResponseAndChanges(this.content, this.luisResult);
         }
         console.log("Result: ", this.luisResult);
     };
     AppComponent.prototype.RemoveItemFromArray = function (indexer) {
         this.luisLinesToCheck.splice(indexer, 1);
     };
-    AppComponent.prototype.ProcessLuisResponseAndChanges = function (existingContent, luisResult) {
+    AppComponent.prototype.ProcessLuisResponseAndChanges = function (responseData) {
+        var _this = this;
+        responseData.forEach(function (value) {
+            var indexOfRecord = _this.content.findIndex(function (x) { return x.lineNumber.toString() == value.LineToUpdate; });
+            var currentContent = _this.content[indexOfRecord].content;
+            _this.content[indexOfRecord].changeToContent = currentContent.replace(value.UpdateFrom, "<del>" + value.UpdateFrom + "</del><ins>" + value.UpdateTo + "</ins>");
+            ;
+        });
+        this.changedLuisResults = this.content.filter(function (v) { return v.changeToContent != ""; });
+        //for (let change in responseData) {
+        //  let number = change.LineToUpdate;
+        //}
+        //console.log(currentData);
         //let filteredList = luisResult.Children;
         //console.log(filteredList);
         //for (let luis of luisResult.Children) {
@@ -122,7 +136,7 @@ var AppComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./app.component.html */ "./src/app/app.component.html"),
             styles: [__webpack_require__(/*! ./app.component.css */ "./src/app/app.component.css")]
         }),
-        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"], _app_services_api_service__WEBPACK_IMPORTED_MODULE_2__["ApiService"]])
+        __metadata("design:paramtypes", [_app_services_api_service__WEBPACK_IMPORTED_MODULE_1__["ApiService"]])
     ], AppComponent);
     return AppComponent;
 }());
@@ -205,6 +219,33 @@ var Content = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/models/enums.ts":
+/*!*********************************!*\
+  !*** ./src/app/models/enums.ts ***!
+  \*********************************/
+/*! exports provided: CompositeType, LuisRequestType */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CompositeType", function() { return CompositeType; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LuisRequestType", function() { return LuisRequestType; });
+var CompositeType;
+(function (CompositeType) {
+    CompositeType[CompositeType["LineToUpdate"] = 0] = "LineToUpdate";
+    CompositeType[CompositeType["UpdateFrom"] = 1] = "UpdateFrom";
+    CompositeType[CompositeType["UpdateTo"] = 2] = "UpdateTo";
+})(CompositeType || (CompositeType = {}));
+var LuisRequestType;
+(function (LuisRequestType) {
+    LuisRequestType[LuisRequestType["FullLuisModel"] = 0] = "FullLuisModel";
+    LuisRequestType[LuisRequestType["CompositeEntity"] = 1] = "CompositeEntity";
+    LuisRequestType[LuisRequestType["TopScoringIntent"] = 2] = "TopScoringIntent";
+})(LuisRequestType || (LuisRequestType = {}));
+
+
+/***/ }),
+
 /***/ "./src/app/services/api.service.ts":
 /*!*****************************************!*\
   !*** ./src/app/services/api.service.ts ***!
@@ -247,11 +288,12 @@ var ApiService = /** @class */ (function () {
     ApiService.prototype.handleError = function (error) {
         return rxjs_internal_Observable__WEBPACK_IMPORTED_MODULE_2__["Observable"].throw(error.statusText);
     };
-    ApiService.prototype.postDataAndReturnCompositeEntitie = function (url, postObj) {
-        return this.httpClient.post(url, postObj, httpOptions);
+    ApiService.prototype.postDataAndReturnCompositeEntitie = function (url, postObj, requestType) {
+        var httpParams = postObj; //new HttpParams().set('query', postObj).set('responseType', requestType.toString());
+        return this.httpClient.post(url, { query: postObj, responseType: requestType }, httpOptions);
     };
-    ApiService.prototype.getData = function (url, postQuery) {
-        return this.httpClient.get(url, { params: { query: postQuery } });
+    ApiService.prototype.getData = function (url, postQuery, getType) {
+        return this.httpClient.get(url, { params: { query: postQuery, responseType: getType } });
     };
     ApiService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({

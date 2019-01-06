@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.27004.2006
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContentUpdateAI.Luis.Tests", "ContentUpdateAI.Luis.Tests\ContentUpdateAI.Luis.Tests.csproj", "{79F43E44-7261-40B8-BF7B-6922D359A359}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContentUpdateAI.Web", "ContentUpdateAI.Web\ContentUpdateAI.Web.csproj", "{34D54D72-14E2-4CB1-9579-DDAF1191E011}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContentUpdateAI.Controller", "ContentUpdateAI.Controller\ContentUpdateAI.Controller.csproj", "{B693CFC3-1CF2-4919-AB46-172EBC11EDAF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContentUpdateAI.LuisService", "ContentUpdateAI.LuisService\ContentUpdateAI.LuisService.csproj", "{B5F02AB3-1BE5-4CCF-BCA8-13D9E4EFDF8D}"
@@ -27,10 +25,6 @@ Global
 		{79F43E44-7261-40B8-BF7B-6922D359A359}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79F43E44-7261-40B8-BF7B-6922D359A359}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79F43E44-7261-40B8-BF7B-6922D359A359}.Release|Any CPU.Build.0 = Release|Any CPU
-		{34D54D72-14E2-4CB1-9579-DDAF1191E011}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{34D54D72-14E2-4CB1-9579-DDAF1191E011}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{34D54D72-14E2-4CB1-9579-DDAF1191E011}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{34D54D72-14E2-4CB1-9579-DDAF1191E011}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B693CFC3-1CF2-4919-AB46-172EBC11EDAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B693CFC3-1CF2-4919-AB46-172EBC11EDAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B693CFC3-1CF2-4919-AB46-172EBC11EDAF}.Release|Any CPU.ActiveCfg = Release|Any CPU

@@ -104,17 +104,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\.gitignore" />
-    <Content Include="app\dist\out-tsc\e2e\src\app.e2e-spec.js" />
-    <Content Include="app\dist\out-tsc\e2e\src\app.po.js" />
-    <Content Include="app\dist\out-tsc\src\app\app-routing.module.js" />
-    <Content Include="app\dist\out-tsc\src\app\app.component.js" />
-    <Content Include="app\dist\out-tsc\src\app\app.component.spec.js" />
-    <Content Include="app\dist\out-tsc\src\app\app.module.js" />
-    <Content Include="app\dist\out-tsc\src\environments\environment.js" />
-    <Content Include="app\dist\out-tsc\src\environments\environment.prod.js" />
-    <Content Include="app\dist\out-tsc\src\main.js" />
-    <Content Include="app\dist\out-tsc\src\polyfills.js" />
-    <Content Include="app\dist\out-tsc\src\test.js" />
     <Content Include="app\e2e\protractor.conf.js" />
     <Content Include="app\src\app\app.component.css" />
     <Content Include="app\src\app\app.component.html" />
@@ -213,17 +202,6 @@
     <Content Include="app\.git\refs\heads\master" />
     <Content Include="app\.editorconfig" />
     <Content Include="app\angular.json" />
-    <Content Include="app\dist\out-tsc\e2e\src\app.e2e-spec.js.map" />
-    <Content Include="app\dist\out-tsc\e2e\src\app.po.js.map" />
-    <Content Include="app\dist\out-tsc\src\app\app-routing.module.js.map" />
-    <Content Include="app\dist\out-tsc\src\app\app.component.js.map" />
-    <Content Include="app\dist\out-tsc\src\app\app.component.spec.js.map" />
-    <Content Include="app\dist\out-tsc\src\app\app.module.js.map" />
-    <Content Include="app\dist\out-tsc\src\environments\environment.js.map" />
-    <Content Include="app\dist\out-tsc\src\environments\environment.prod.js.map" />
-    <Content Include="app\dist\out-tsc\src\main.js.map" />
-    <Content Include="app\dist\out-tsc\src\polyfills.js.map" />
-    <Content Include="app\dist\out-tsc\src\test.js.map" />
     <Content Include="app\e2e\tsconfig.e2e.json" />
     <Content Include="app\package-lock.json" />
     <Content Include="app\package.json" />
@@ -260,6 +238,7 @@
     <TypeScriptCompile Include="app\src\app\app.component.ts" />
     <TypeScriptCompile Include="app\src\app\app.module.ts" />
     <TypeScriptCompile Include="app\src\app\models\contentModel.ts" />
+    <TypeScriptCompile Include="app\src\app\models\enums.ts" />
     <TypeScriptCompile Include="app\src\app\models\luisResponseModel.ts" />
     <TypeScriptCompile Include="app\src\app\services\api.service.ts" />
     <TypeScriptCompile Include="app\src\environments\environment.prod.ts" />
@@ -315,6 +294,14 @@
     <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props'))" />
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
   </Target>
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
