@@ -17,15 +17,18 @@
   }
 }
 
+.luis-page-header {
+    border-bottom: $primary-thick-border;
+    color: $primary-text-colour;
+}
 .luis-display {
     width: 100%;
-    padding: 2px 5px;
+    padding: 15px 30px;
     margin-top: $small-margin;
     margin-bottom: $small-margin;
-    line-height: 20px;
     text-align: center;
     border-radius: $small-border-radius;
-
+    border: 1px solid #07a193;
 
     & > div {
         border-radius: $small-border-radius;
@@ -34,6 +37,7 @@
         line-height: 30px;
         border: 1px solid $tertiary-colour;
         vertical-align: middle;
+        text-align: left;
     }
 
     & > button {

@@ -1,5 +1,5 @@
 ﻿body {
-  background-color: #063E4C; }
+  background-color: rgba(37, 44, 49, 0.98); }
 
 .luis-form {
   text-align: center; }
@@ -11,21 +11,26 @@
     margin-top: 10px;
     margin-bottom: 10px; }
 
+.luis-page-header {
+  border-bottom: 2px solid #07a193;
+  color: azure; }
+
 .luis-display {
   width: 100%;
-  padding: 2px 5px;
+  padding: 15px 30px;
   margin-top: 10px;
   margin-bottom: 10px;
-  line-height: 20px;
   text-align: center;
-  border-radius: 5px; }
+  border-radius: 1px;
+  border: 1px solid #07a193; }
   .luis-display > div {
-    border-radius: 5px;
+    border-radius: 1px;
     background-color: #8FC5DF;
     margin-top: 10px;
     line-height: 30px;
     border: 1px solid #fff;
-    vertical-align: middle; }
+    vertical-align: middle;
+    text-align: left; }
   .luis-display > button {
     margin: 0 auto;
     margin-top: 10px;

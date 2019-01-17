@@ -107,6 +107,8 @@
     <Content Include="app\e2e\protractor.conf.js" />
     <Content Include="app\src\app\app.component.css" />
     <Content Include="app\src\app\app.component.html" />
+    <Content Include="app\src\app\components\content-display\content-display.component.html" />
+    <Content Include="app\src\app\components\luis-results\luis-results.component.html" />
     <Content Include="app\src\favicon.ico" />
     <Content Include="app\src\index.html" />
     <Content Include="app\src\karma.conf.js" />
@@ -214,6 +216,8 @@
     <Content Include="app\src\tslint.json" />
     <Content Include="app\tsconfig.json" />
     <Content Include="app\tslint.json" />
+    <Content Include="app\src\app\components\luis-results\luis-results.component.sass" />
+    <Content Include="app\src\app\components\content-display\content-display.component.sass" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
@@ -237,10 +241,18 @@
     <TypeScriptCompile Include="app\e2e\src\app.po.ts" />
     <TypeScriptCompile Include="app\src\app\app.component.ts" />
     <TypeScriptCompile Include="app\src\app\app.module.ts" />
+    <TypeScriptCompile Include="app\src\app\components\content-display\content-display.component.spec.ts" />
+    <TypeScriptCompile Include="app\src\app\components\content-display\content-display.component.ts" />
+    <TypeScriptCompile Include="app\src\app\components\luis-results\luis-results.component.spec.ts" />
+    <TypeScriptCompile Include="app\src\app\components\luis-results\luis-results.component.ts" />
+    <TypeScriptCompile Include="app\src\app\components\luis-results\luis-results.module.ts" />
     <TypeScriptCompile Include="app\src\app\models\contentModel.ts" />
     <TypeScriptCompile Include="app\src\app\models\enums.ts" />
     <TypeScriptCompile Include="app\src\app\models\luisResponseModel.ts" />
     <TypeScriptCompile Include="app\src\app\services\api.service.ts" />
+    <TypeScriptCompile Include="app\src\app\services\content.service.spec.ts" />
+    <TypeScriptCompile Include="app\src\app\services\content.service.ts" />
+    <TypeScriptCompile Include="app\src\app\services\luisResults.service.ts" />
     <TypeScriptCompile Include="app\src\environments\environment.prod.ts" />
     <TypeScriptCompile Include="app\src\environments\environment.ts" />
     <TypeScriptCompile Include="app\src\main.ts" />

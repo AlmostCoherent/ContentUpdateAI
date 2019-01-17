@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuY3NzIn0= */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuLi9hcHAuY29tcG9uZW50LmNzcyJ9 */"
 
 /***/ }),
 
@@ -41,7 +41,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"luis-display\">\r\n  <div *ngFor=\"let item of content;\">{{ item.lineNumber }} :: {{ item.content}}</div>\r\n</div>\r\n\r\n<div class=\"luis-form\">\r\n  <form #luisForm=\"ngForm\" (ngSubmit)=\"AddToLuisCheck(luisForm.form)\">\r\n    <label for=\"luis-query\">{{ this.labelForInput }}</label>\r\n    <input type=\"text\"\r\n           class=\"form-control\"\r\n           name=\"luis-query\"\r\n           ngModel\r\n           minlength=\"3\"\r\n           #nameField=\"ngModel\" />\r\n    <button class=\"btn btn-primary\">Submit</button>\r\n  </form>\r\n</div>\r\n\r\n<div class=\"luis-display\">\r\n  <div *ngFor=\"let item of luisLinesToCheck; let i = index\" >{{ item }} <div class=\"luis-remove\" (click)=\"RemoveItemFromArray(i)\">X</div></div>\r\n  <button class=\"btn btn-primary\" (click)=\"GetLuisResult()\">Check for Luis matches</button>\r\n</div>\r\n<div ng-if=\"this.changedLuisResults\" class=\"luis-display\">\r\n  <div *ngFor=\"let item of changedLuisResults\">{{ item.lineNumber }} :: <span [innerHTML]=\"item.changeToContent\"></span></div>\r\n</div>\r\n"
+module.exports = "<app-content-display [currentContent]=\"currentContent\"></app-content-display>\r\n<app-luis-results [currentContent]=\"currentContent\"></app-luis-results>\r\n"
 
 /***/ }),
 
@@ -56,9 +56,7 @@ module.exports = "<div class=\"luis-display\">\r\n  <div *ngFor=\"let item of co
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _app_services_api_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../app/services/api.service */ "./src/app/services/api.service.ts");
-/* harmony import */ var _models_contentModel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./models/contentModel */ "./src/app/models/contentModel.ts");
-/* harmony import */ var _models_enums__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./models/enums */ "./src/app/models/enums.ts");
+/* harmony import */ var _services_content_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./services/content.service */ "./src/app/services/content.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -70,65 +68,18 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
-
-
 var AppComponent = /** @class */ (function () {
-    function AppComponent(apiService) {
-        this.apiService = apiService;
+    function AppComponent(_contentService) {
+        this._contentService = _contentService;
         this.title = 'AngularMVC';
-        this.luisLinesToCheck = [];
         this.labelForInput = "Enter update instruction:";
     }
     AppComponent.prototype.ngOnInit = function () {
-        this.content = [
-            new _models_contentModel__WEBPACK_IMPORTED_MODULE_2__["Content"](1, "GoF Definition"),
-            new _models_contentModel__WEBPACK_IMPORTED_MODULE_2__["Content"](2, "This chapter covers the Singleton pattern."),
-            new _models_contentModel__WEBPACK_IMPORTED_MODULE_2__["Content"](3, "GoF Definition"),
-            new _models_contentModel__WEBPACK_IMPORTED_MODULE_2__["Content"](4, "Ensure a class has only one instance, and provide a global point of access to it."),
-            new _models_contentModel__WEBPACK_IMPORTED_MODULE_2__["Content"](5, "Concept"),
-            new _models_contentModel__WEBPACK_IMPORTED_MODULE_2__["Content"](6, "A particular class should have only one instance. You can use this instance whenever "),
-            new _models_contentModel__WEBPACK_IMPORTED_MODULE_2__["Content"](7, "you need it and therefore avoid creating unnecessary objects."),
-        ];
-    };
-    AppComponent.prototype.AddToLuisCheck = function (newLineToCheck) {
-        this.luisLinesToCheck.push(newLineToCheck.value["luis-query"]);
-        newLineToCheck.reset();
-    };
-    AppComponent.prototype.GetLuisResult = function () {
         var _this = this;
-        if (this.luisLinesToCheck.length > 0) {
-            this.apiService.postDataAndReturnCompositeEntitie('/contentupdate/v1/check-composite', this.luisLinesToCheck, _models_enums__WEBPACK_IMPORTED_MODULE_3__["LuisRequestType"].CompositeEntity)
-                .subscribe(function (data) {
-                _this.luisResult = data;
-                _this.ProcessLuisResponseAndChanges(_this.luisResult);
-                //this.luisResult = data,
-                //  console.log("data: ", data, "luisResult: ", this.luisResult)
-            });
-            //      this.ProcessLuisResponseAndChanges(this.content, this.luisResult);
-        }
-        console.log("Result: ", this.luisResult);
-    };
-    AppComponent.prototype.RemoveItemFromArray = function (indexer) {
-        this.luisLinesToCheck.splice(indexer, 1);
-    };
-    AppComponent.prototype.ProcessLuisResponseAndChanges = function (responseData) {
-        var _this = this;
-        responseData.forEach(function (value) {
-            var indexOfRecord = _this.content.findIndex(function (x) { return x.lineNumber.toString() == value.LineToUpdate; });
-            var currentContent = _this.content[indexOfRecord].content;
-            _this.content[indexOfRecord].changeToContent = currentContent.replace(value.UpdateFrom, "<del>" + value.UpdateFrom + "</del><ins>" + value.UpdateTo + "</ins>");
-            ;
+        this._contentService.getContentData("content/v1/get-content", "1")
+            .subscribe(function (data) {
+            _this.currentContent = data;
         });
-        this.changedLuisResults = this.content.filter(function (v) { return v.changeToContent != ""; });
-        //for (let change in responseData) {
-        //  let number = change.LineToUpdate;
-        //}
-        //console.log(currentData);
-        //let filteredList = luisResult.Children;
-        //console.log(filteredList);
-        //for (let luis of luisResult.Children) {
-        //  if (existingContent.find(c => c.lineNumber == luis.))
-        //}
     };
     AppComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -136,7 +87,7 @@ var AppComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./app.component.html */ "./src/app/app.component.html"),
             styles: [__webpack_require__(/*! ./app.component.css */ "./src/app/app.component.css")]
         }),
-        __metadata("design:paramtypes", [_app_services_api_service__WEBPACK_IMPORTED_MODULE_1__["ApiService"]])
+        __metadata("design:paramtypes", [_services_content_service__WEBPACK_IMPORTED_MODULE_1__["ContentService"]])
     ], AppComponent);
     return AppComponent;
 }());
@@ -160,6 +111,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _components_luis_results_luis_results_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/luis-results/luis-results.component */ "./src/app/components/luis-results/luis-results.component.ts");
+/* harmony import */ var _components_content_display_content_display_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/content-display/content-display.component */ "./src/app/components/content-display/content-display.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -171,13 +124,17 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
+
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             declarations: [
-                _app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"]
+                _app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"],
+                _components_luis_results_luis_results_component__WEBPACK_IMPORTED_MODULE_5__["LuisResultsComponent"],
+                _components_content_display_content_display_component__WEBPACK_IMPORTED_MODULE_6__["ContentDisplayComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -195,24 +152,172 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/models/contentModel.ts":
-/*!****************************************!*\
-  !*** ./src/app/models/contentModel.ts ***!
-  \****************************************/
-/*! exports provided: Content */
+/***/ "./src/app/components/content-display/content-display.component.html":
+/*!***************************************************************************!*\
+  !*** ./src/app/components/content-display/content-display.component.html ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"luis-page-header\">Current Content</div>\r\n<div class=\"luis-display\">\r\n  <div class=\"row\" *ngFor=\"let item of currentContent;\">\r\n    <div class=\"col-md-1\">{{ item.LineNumber }}</div>\r\n    <div class=\"col-md-11\">\r\n      <div [innerHTML]=\"item.Content\"></div>\r\n      <div [innerHTML]=\"item.ChangeToContent\"></div>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/components/content-display/content-display.component.sass":
+/*!***************************************************************************!*\
+  !*** ./src/app/components/content-display/content-display.component.sass ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuLi9jb21wb25lbnRzL2NvbnRlbnQtZGlzcGxheS9jb250ZW50LWRpc3BsYXkuY29tcG9uZW50LnNhc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/components/content-display/content-display.component.ts":
+/*!*************************************************************************!*\
+  !*** ./src/app/components/content-display/content-display.component.ts ***!
+  \*************************************************************************/
+/*! exports provided: ContentDisplayComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Content", function() { return Content; });
-var Content = /** @class */ (function () {
-    function Content(lineNumber, content, changeToContent) {
-        if (changeToContent === void 0) { changeToContent = ""; }
-        this.content = content;
-        this.lineNumber = lineNumber;
-        this.changeToContent = changeToContent;
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContentDisplayComponent", function() { return ContentDisplayComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var ContentDisplayComponent = /** @class */ (function () {
+    function ContentDisplayComponent() {
     }
-    return Content;
+    ContentDisplayComponent.prototype.ngOnInit = function () {
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Array)
+    ], ContentDisplayComponent.prototype, "currentContent", void 0);
+    ContentDisplayComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-content-display',
+            template: __webpack_require__(/*! ./content-display.component.html */ "./src/app/components/content-display/content-display.component.html"),
+            styles: [__webpack_require__(/*! ./content-display.component.sass */ "./src/app/components/content-display/content-display.component.sass")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], ContentDisplayComponent);
+    return ContentDisplayComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/luis-results/luis-results.component.html":
+/*!*********************************************************************!*\
+  !*** ./src/app/components/luis-results/luis-results.component.html ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"luis-form\">\r\n  <form #luisForm=\"ngForm\" (ngSubmit)=\"AddToLuisCheck(luisForm.form)\">\r\n    <label for=\"luis-query\">{{ this.labelForInput }}</label>\r\n    <input type=\"text\"\r\n           class=\"form-control\"\r\n           name=\"luis-query\"\r\n           ngModel\r\n           minlength=\"3\"\r\n           #nameField=\"ngModel\" />\r\n    <button class=\"btn btn-primary\">Submit</button>\r\n  </form>\r\n</div>\r\n<div class=\"luis-page-header\">Instructions for LUIS</div>\r\n<div class=\"luis-display\">\r\n  <div *ngFor=\"let item of luisLinesToCheck; let i = index\">{{ item }} <div class=\"luis-remove\" (click)=\"RemoveItemFromArray(i)\">X</div></div>\r\n  <button class=\"btn btn-primary\" (click)=\"GetLuisResult()\">Check for Luis matches</button>\r\n</div>\r\n\r\n<div class=\"luis-page-header\">Changes to Content</div>\r\n<div ng-if=\"this.currentLuisChanges\" class=\"luis-display\">\r\n  <div *ngFor=\"let item of currentLuisChanges\">{{ item.LineNumber }} :: <span [innerHTML]=\"item.ChangeToContent\"></span></div>\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/components/luis-results/luis-results.component.sass":
+/*!*********************************************************************!*\
+  !*** ./src/app/components/luis-results/luis-results.component.sass ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuLi9jb21wb25lbnRzL2x1aXMtcmVzdWx0cy9sdWlzLXJlc3VsdHMuY29tcG9uZW50LnNhc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/components/luis-results/luis-results.component.ts":
+/*!*******************************************************************!*\
+  !*** ./src/app/components/luis-results/luis-results.component.ts ***!
+  \*******************************************************************/
+/*! exports provided: LuisResultsComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LuisResultsComponent", function() { return LuisResultsComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_services_api_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/services/api.service */ "./src/app/services/api.service.ts");
+/* harmony import */ var src_app_models_enums__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/models/enums */ "./src/app/models/enums.ts");
+/* harmony import */ var src_app_services_luisResults_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/luisResults.service */ "./src/app/services/luisResults.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var LuisResultsComponent = /** @class */ (function () {
+    function LuisResultsComponent(_apiService, _luisService) {
+        this._apiService = _apiService;
+        this._luisService = _luisService;
+        this.luisLinesToCheck = [];
+    }
+    LuisResultsComponent.prototype.ngOnInit = function () {
+    };
+    //@Input() public setUpLuisChanges(currentContent: Array<Content>, content: string[])
+    //{
+    //  this.currentContent = currentContent;
+    //}
+    LuisResultsComponent.prototype.ngOnChanges = function (changes) {
+        var temp = "";
+        //this.luisLinesToCheck = this.luisLinesToCheck;
+    };
+    LuisResultsComponent.prototype.AddToLuisCheck = function (newLineToCheck) {
+        this.luisLinesToCheck.push(newLineToCheck.value["luis-query"]);
+        newLineToCheck.reset();
+    };
+    LuisResultsComponent.prototype.RemoveItemFromArray = function (indexer) {
+        this.luisLinesToCheck.splice(indexer, 1);
+    };
+    LuisResultsComponent.prototype.GetLuisResult = function () {
+        var _this = this;
+        if (this.luisLinesToCheck.length > 0) {
+            this._apiService.postDataAndReturnCompositeEntitie('/contentupdate/v1/check-composite', this.luisLinesToCheck, src_app_models_enums__WEBPACK_IMPORTED_MODULE_2__["LuisRequestType"].CompositeEntity)
+                .subscribe(function (data) {
+                _this.luisResult = data;
+                _this._luisService.ProcessLuisResponseAndChanges(_this.luisResult, _this.currentContent);
+            });
+        }
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Array)
+    ], LuisResultsComponent.prototype, "currentContent", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Array)
+    ], LuisResultsComponent.prototype, "luisInstructions", void 0);
+    LuisResultsComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-luis-results',
+            template: __webpack_require__(/*! ./luis-results.component.html */ "./src/app/components/luis-results/luis-results.component.html"),
+            styles: [__webpack_require__(/*! ./luis-results.component.sass */ "./src/app/components/luis-results/luis-results.component.sass")]
+        }),
+        __metadata("design:paramtypes", [src_app_services_api_service__WEBPACK_IMPORTED_MODULE_1__["ApiService"], src_app_services_luisResults_service__WEBPACK_IMPORTED_MODULE_3__["LuisService"]])
+    ], LuisResultsComponent);
+    return LuisResultsComponent;
 }());
 
 
@@ -302,6 +407,98 @@ var ApiService = /** @class */ (function () {
         __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
     ], ApiService);
     return ApiService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/content.service.ts":
+/*!*********************************************!*\
+  !*** ./src/app/services/content.service.ts ***!
+  \*********************************************/
+/*! exports provided: ContentService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContentService", function() { return ContentService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var httpOptions = {
+    headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({
+        'Content-Type': 'application/json'
+    })
+};
+var ContentService = /** @class */ (function () {
+    function ContentService(httpClient) {
+        this.httpClient = httpClient;
+    }
+    ContentService.prototype.getContentData = function (url, postObj) {
+        var httpParams = postObj;
+        return this.httpClient.post(url, { query: postObj }, httpOptions);
+    };
+    ContentService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
+    ], ContentService);
+    return ContentService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/luisResults.service.ts":
+/*!*************************************************!*\
+  !*** ./src/app/services/luisResults.service.ts ***!
+  \*************************************************/
+/*! exports provided: LuisService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LuisService", function() { return LuisService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var LuisService = /** @class */ (function () {
+    function LuisService() {
+    }
+    LuisService.prototype.ProcessLuisResponseAndChanges = function (responseData, inputContent) {
+        responseData.forEach(function (value) {
+            var indexOfRecord = inputContent.findIndex(function (x) { return x.LineNumber.toString() == value.LineToUpdate; });
+            var currentContent = inputContent[indexOfRecord].Content;
+            inputContent[indexOfRecord].ChangeToContent = currentContent.replace(value.UpdateFrom, "<del>" + value.UpdateFrom + "</del><ins>" + value.UpdateTo + "</ins>");
+            ;
+        });
+        var changedLuisResults = inputContent.filter(function (v) { return v.ChangeToContent != ""; });
+        return changedLuisResults;
+    };
+    LuisService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        })
+    ], LuisService);
+    return LuisService;
 }());
 
 

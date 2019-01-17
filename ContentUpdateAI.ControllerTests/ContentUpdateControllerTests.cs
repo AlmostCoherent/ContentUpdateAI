@@ -1,6 +1,4 @@
-﻿using System;
-using System.Reflection;
-using Xunit;
+﻿using Xunit;
 
 namespace ContentUpdateAI.Controller.Tests
 {

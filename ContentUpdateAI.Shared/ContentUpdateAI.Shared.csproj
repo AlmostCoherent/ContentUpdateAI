@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B693CFC3-1CF2-4919-AB46-172EBC11EDAF}</ProjectGuid>
+    <ProjectGuid>{B78C2DDF-D689-49C1-9C07-50129B4C0AE2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ContentUpdateAI.Controller</RootNamespace>
-    <AssemblyName>ContentUpdateAI.Controller</AssemblyName>
+    <RootNamespace>ContentUpdateAI.Shared</RootNamespace>
+    <AssemblyName>ContentUpdateAI.Shared</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,21 +30,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Cognitive.LUIS, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Cognitive.LUIS.2.0.2\lib\portable45-net45+win8+wpa81\Microsoft.Cognitive.LUIS.dll</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Web.Mvc">
-      <HintPath>..\ContentUpdateAI.WebApp\bin\System.Web.Mvc.dll</HintPath>
-    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,31 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ContentController.cs" />
-    <Compile Include="ContentUpdateController.cs" />
-    <Compile Include="HomeController.cs" />
+    <Compile Include="ApiHelpers\StringProcessors.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="app.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ContentUpdateAI.EF6\ContentUpdateAI.EF6.csproj">
-      <Project>{bc97b8ae-7f00-4cc8-9599-6f88d30e9af5}</Project>
-      <Name>ContentUpdateAI.EF6</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ContentUpdateAI.LuisService\ContentUpdateAI.LuisService.csproj">
-      <Project>{B5F02AB3-1BE5-4CCF-BCA8-13D9E4EFDF8D}</Project>
-      <Name>ContentUpdateAI.LuisService</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ContentUpdateAI.Shared\ContentUpdateAI.Shared.csproj">
-      <Project>{b78c2ddf-d689-49c1-9c07-50129b4c0ae2}</Project>
-      <Name>ContentUpdateAI.Shared</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
