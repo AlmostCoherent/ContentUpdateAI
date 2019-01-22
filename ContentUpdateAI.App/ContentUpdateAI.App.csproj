@@ -142,64 +142,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="app\.git\COMMIT_EDITMSG" />
-    <Content Include="app\.git\config" />
-    <Content Include="app\.git\description" />
-    <Content Include="app\.git\HEAD" />
-    <Content Include="app\.git\hooks\applypatch-msg.sample" />
-    <Content Include="app\.git\hooks\commit-msg.sample" />
-    <Content Include="app\.git\hooks\fsmonitor-watchman.sample" />
-    <Content Include="app\.git\hooks\post-update.sample" />
-    <Content Include="app\.git\hooks\pre-applypatch.sample" />
-    <Content Include="app\.git\hooks\pre-commit.sample" />
-    <Content Include="app\.git\hooks\pre-push.sample" />
-    <Content Include="app\.git\hooks\pre-rebase.sample" />
-    <Content Include="app\.git\hooks\pre-receive.sample" />
-    <Content Include="app\.git\hooks\prepare-commit-msg.sample" />
-    <Content Include="app\.git\hooks\update.sample" />
-    <Content Include="app\.git\index" />
-    <Content Include="app\.git\info\exclude" />
-    <Content Include="app\.git\logs\HEAD" />
-    <Content Include="app\.git\logs\refs\heads\master" />
-    <Content Include="app\.git\objects\03\8c07086f89f6710398dee5b463119491ecbcad" />
-    <Content Include="app\.git\objects\10\94e7ebdfb84d7275f59e4f76f40fcfe1f23a30" />
-    <Content Include="app\.git\objects\16\317897b1c50a3a71bc775a8d6429f2b4c6cf98" />
-    <Content Include="app\.git\objects\19\0fd300b601e168a3d185dbfa2758ab73257479" />
-    <Content Include="app\.git\objects\1d\16fc5df22eafd28d90ffaf71ea02b02751fd7d" />
-    <Content Include="app\.git\objects\2c\3ba2995c8510c02ca812f90280146738f162cf" />
-    <Content Include="app\.git\objects\36\12073bc31cd4c1f5d6cbb00318521e9a61bd8a" />
-    <Content Include="app\.git\objects\37\371cb04b9f1986d952499cdf9613c9d5d8ca8c" />
-    <Content Include="app\.git\objects\46\aeded1b278b3fd720233810be535ce0a456561" />
-    <Content Include="app\.git\objects\52\e2c1a5a74ce268bec92d34cd3bca751624adb3" />
-    <Content Include="app\.git\objects\6d\db6b2931511b11e5d5938f76076fb37e70363e" />
-    <Content Include="app\.git\objects\6f\fba5a75f2fc6600767f6cb4a2244579efe0b92" />
-    <Content Include="app\.git\objects\72\e463a33539a15bd3e028aaa22c697fc647b9a6" />
-    <Content Include="app\.git\objects\74\1a61cb93748b8090045d8dae645eac78eebad5" />
-    <Content Include="app\.git\objects\7b\4f817adb754769ca126a939d48ac4b0850489d" />
-    <Content Include="app\.git\objects\80\81c7ceaf2be08bf59010158c586170d9d2d517" />
-    <Content Include="app\.git\objects\86\776a391a5b48b32506eb0fa62b15ed6c926b69" />
-    <Content Include="app\.git\objects\90\d4ee0072ce3fc41812f8af910219f9eea3c3de" />
-    <Content Include="app\.git\objects\92\2738b31dce8e3f02fe2761ec7da9e46e5f13c7" />
-    <Content Include="app\.git\objects\96\3d663b9d5b5e78292c6d8d31419cb7498f3eb9" />
-    <Content Include="app\.git\objects\a5\5533053cf29573886351f1d073ffd6254a1539" />
-    <Content Include="app\.git\objects\a6\dd6220282460dae17d69fc030b94ab1e81d960" />
-    <Content Include="app\.git\objects\a8\ed1aed9fb819b2d233a9a9e7124566406ca9d2" />
-    <Content Include="app\.git\objects\a9\a542ae727c42aa7ffea0bf0bd6d7e1aeac8cb8" />
-    <Content Include="app\.git\objects\a9\eaedc7492aa5ab5ed5a5825e1134bb797b8a00" />
-    <Content Include="app\.git\objects\b0\e4f6e09456754f6e1101dcbf17c90a289f2ed9" />
-    <Content Include="app\.git\objects\b6\e00421c95f925352ccf765b942a8e94c0cdc74" />
-    <Content Include="app\.git\objects\c7\b673cf44b388e9989fe908b78d7d73cd2e1409" />
-    <Content Include="app\.git\objects\d3\1687264286d952d49991733d70fc3a6622bd2d" />
-    <Content Include="app\.git\objects\d4\25c6f56b578db1e8d7f8fa2d6c90693ba5d4fb" />
-    <Content Include="app\.git\objects\d5\64d0bc3dd917926892c55e3706cc116d5b165e" />
-    <Content Include="app\.git\objects\de\2db3222c80faea9a43658d3e2f01625a1e9230" />
-    <Content Include="app\.git\objects\de\7733630eb224b246854a20934f792051926e8f" />
-    <Content Include="app\.git\objects\e6\9de29bb2d1d6434b8b29ae775ad8c2e48c5391" />
-    <Content Include="app\.git\objects\e8\9330a618c137cdaccde46f87923736cc04dfb4" />
-    <Content Include="app\.git\objects\ee\5c9d8336b76b3bb5658d0888bdec86eb7b0990" />
-    <Content Include="app\.git\objects\ee\8b84da807cbbc7892be6c8086e01a9591e076a" />
-    <Content Include="app\.git\objects\f2\4d267fac85bd1b0f49ba7bb6353918170be3db" />
-    <Content Include="app\.git\refs\heads\master" />
     <Content Include="app\.editorconfig" />
     <Content Include="app\angular.json" />
     <Content Include="app\e2e\tsconfig.e2e.json" />
@@ -269,11 +211,7 @@
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="app\.git\objects\info\" />
-    <Folder Include="app\.git\objects\pack\" />
-    <Folder Include="app\.git\refs\tags\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
