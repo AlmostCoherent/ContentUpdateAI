@@ -212,7 +212,9 @@
     <Content Include="app\src\tsconfig.app.json" />
     <Content Include="app\src\tsconfig.spec.json" />
     <Content Include="app\src\tslint.json" />
-    <Content Include="app\tsconfig.json" />
+    <Content Include="app\tsconfig.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="app\tslint.json" />
     <Content Include="app\src\app\components\luis-results\luis-results.component.sass" />
     <Content Include="app\src\app\components\content-display\content-display.component.sass" />
