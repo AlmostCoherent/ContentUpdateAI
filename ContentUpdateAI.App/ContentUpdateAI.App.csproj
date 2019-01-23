@@ -101,6 +101,38 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\.gitignore" />
+    <Content Include="app\dist\out-tsc\e2e\src\app.e2e-spec.js" />
+    <Content Include="app\dist\out-tsc\e2e\src\app.po.js" />
+    <Content Include="app\dist\out-tsc\src\app\app.component.js" />
+    <Content Include="app\dist\out-tsc\src\app\app.module.js" />
+    <Content Include="app\dist\out-tsc\src\app\components\content-display\content-display.component.js" />
+    <Content Include="app\dist\out-tsc\src\app\components\content-display\content-display.component.spec.js" />
+    <Content Include="app\dist\out-tsc\src\app\components\luis-results\luis-results.component.js" />
+    <Content Include="app\dist\out-tsc\src\app\components\luis-results\luis-results.component.spec.js" />
+    <Content Include="app\dist\out-tsc\src\app\components\luis-results\luis-results.module.js" />
+    <Content Include="app\dist\out-tsc\src\app\models\contentModel.js" />
+    <Content Include="app\dist\out-tsc\src\app\models\enums.js" />
+    <Content Include="app\dist\out-tsc\src\app\models\luisResponseModel.js" />
+    <Content Include="app\dist\out-tsc\src\app\services\api.service.js" />
+    <Content Include="app\dist\out-tsc\src\app\services\content.service.js" />
+    <Content Include="app\dist\out-tsc\src\app\services\content.service.spec.js" />
+    <Content Include="app\dist\out-tsc\src\app\services\data-service.service.js" />
+    <Content Include="app\dist\out-tsc\src\app\services\data-service.service.spec.js" />
+    <Content Include="app\dist\out-tsc\src\app\services\luisResults.service.js" />
+    <Content Include="app\dist\out-tsc\src\environments\environment.js" />
+    <Content Include="app\dist\out-tsc\src\environments\environment.prod.js" />
+    <Content Include="app\dist\out-tsc\src\main.js" />
+    <Content Include="app\dist\out-tsc\src\polyfills.js" />
+    <Content Include="app\dist\out-tsc\src\test.js" />
+    <Content Include="app\e2e\protractor.conf.js" />
+    <Content Include="app\src\app\app.component.css" />
+    <Content Include="app\src\app\app.component.html" />
+    <Content Include="app\src\app\components\content-display\content-display.component.html" />
+    <Content Include="app\src\app\components\luis-results\luis-results.component.html" />
+    <Content Include="app\src\favicon.ico" />
+    <Content Include="app\src\index.html" />
+    <Content Include="app\src\karma.conf.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\scss\app.css">
@@ -133,6 +165,45 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="app\.editorconfig" />
+    <Content Include="app\angular.json" />
+    <Content Include="app\dist\out-tsc\e2e\src\app.e2e-spec.js.map" />
+    <Content Include="app\dist\out-tsc\e2e\src\app.po.js.map" />
+    <Content Include="app\dist\out-tsc\src\app\app.component.js.map" />
+    <Content Include="app\dist\out-tsc\src\app\app.module.js.map" />
+    <Content Include="app\dist\out-tsc\src\app\components\content-display\content-display.component.js.map" />
+    <Content Include="app\dist\out-tsc\src\app\components\content-display\content-display.component.spec.js.map" />
+    <Content Include="app\dist\out-tsc\src\app\components\luis-results\luis-results.component.js.map" />
+    <Content Include="app\dist\out-tsc\src\app\components\luis-results\luis-results.component.spec.js.map" />
+    <Content Include="app\dist\out-tsc\src\app\components\luis-results\luis-results.module.js.map" />
+    <Content Include="app\dist\out-tsc\src\app\models\contentModel.js.map" />
+    <Content Include="app\dist\out-tsc\src\app\models\enums.js.map" />
+    <Content Include="app\dist\out-tsc\src\app\models\luisResponseModel.js.map" />
+    <Content Include="app\dist\out-tsc\src\app\services\api.service.js.map" />
+    <Content Include="app\dist\out-tsc\src\app\services\content.service.js.map" />
+    <Content Include="app\dist\out-tsc\src\app\services\content.service.spec.js.map" />
+    <Content Include="app\dist\out-tsc\src\app\services\data-service.service.js.map" />
+    <Content Include="app\dist\out-tsc\src\app\services\data-service.service.spec.js.map" />
+    <Content Include="app\dist\out-tsc\src\app\services\luisResults.service.js.map" />
+    <Content Include="app\dist\out-tsc\src\environments\environment.js.map" />
+    <Content Include="app\dist\out-tsc\src\environments\environment.prod.js.map" />
+    <Content Include="app\dist\out-tsc\src\main.js.map" />
+    <Content Include="app\dist\out-tsc\src\polyfills.js.map" />
+    <Content Include="app\dist\out-tsc\src\test.js.map" />
+    <Content Include="app\e2e\tsconfig.e2e.json" />
+    <Content Include="app\package-lock.json" />
+    <Content Include="app\package.json" />
+    <Content Include="app\README.md" />
+    <Content Include="app\src\app\components\content-display\content-display.component.sass" />
+    <Content Include="app\src\app\components\luis-results\luis-results.component.sass" />
+    <Content Include="app\src\assets\.gitkeep" />
+    <Content Include="app\src\browserslist" />
+    <Content Include="app\src\styles.sass" />
+    <Content Include="app\src\tsconfig.app.json" />
+    <Content Include="app\src\tsconfig.spec.json" />
+    <Content Include="app\src\tslint.json" />
+    <Content Include="app\tsconfig.json" />
+    <Content Include="app\tslint.json" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
@@ -160,6 +231,31 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="app\e2e\src\app.e2e-spec.ts" />
+    <TypeScriptCompile Include="app\e2e\src\app.po.ts" />
+    <TypeScriptCompile Include="app\src\app\app.component.ts" />
+    <TypeScriptCompile Include="app\src\app\app.module.ts" />
+    <TypeScriptCompile Include="app\src\app\components\content-display\content-display.component.spec.ts" />
+    <TypeScriptCompile Include="app\src\app\components\content-display\content-display.component.ts" />
+    <TypeScriptCompile Include="app\src\app\components\luis-results\luis-results.component.spec.ts" />
+    <TypeScriptCompile Include="app\src\app\components\luis-results\luis-results.component.ts" />
+    <TypeScriptCompile Include="app\src\app\components\luis-results\luis-results.module.ts" />
+    <TypeScriptCompile Include="app\src\app\models\contentModel.ts" />
+    <TypeScriptCompile Include="app\src\app\models\enums.ts" />
+    <TypeScriptCompile Include="app\src\app\models\luisResponseModel.ts" />
+    <TypeScriptCompile Include="app\src\app\services\api.service.ts" />
+    <TypeScriptCompile Include="app\src\app\services\content.service.spec.ts" />
+    <TypeScriptCompile Include="app\src\app\services\content.service.ts" />
+    <TypeScriptCompile Include="app\src\app\services\data-service.service.spec.ts" />
+    <TypeScriptCompile Include="app\src\app\services\data-service.service.ts" />
+    <TypeScriptCompile Include="app\src\app\services\luisResults.service.ts" />
+    <TypeScriptCompile Include="app\src\environments\environment.prod.ts" />
+    <TypeScriptCompile Include="app\src\environments\environment.ts" />
+    <TypeScriptCompile Include="app\src\main.ts" />
+    <TypeScriptCompile Include="app\src\polyfills.ts" />
+    <TypeScriptCompile Include="app\src\test.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
