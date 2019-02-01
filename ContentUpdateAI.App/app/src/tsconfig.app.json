@@ -4,6 +4,16 @@
     "outDir": "../out-tsc/app",
     "types": []
   },
+  "files": [
+    "node_modules/@angular/core/core.d.ts",
+    "node_modules/@angular/http/http.d.ts",
+    "node_modules/@angular/forms/forms.d.ts",
+    "node_modules/@angular/common/http.d.ts",
+    "node_modules/rxjs/internal/Observable.d.ts",
+    "node_modules/rxjs/operators.d.ts",
+    "node_modules/@angular/common/http.d.ts",
+    "node_modules/@angular/router/router.d.ts"
+  ],
   "exclude": [
     "test.ts",
     "**/*.spec.ts"

@@ -15,6 +15,9 @@ namespace ContentUpdateAI.App
                       "~/Content/bootstrap.css",
                       "~/Content/scss/app.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new ScriptBundle("~/scripts/app").IncludeDirectory(
+                "~/app/dist/out-tsc/src/", "*.js", true));
         }
     }
 }

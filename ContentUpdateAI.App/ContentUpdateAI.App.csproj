@@ -150,6 +150,13 @@
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="scripts\myapp\favicon.ico" />
+    <Content Include="scripts\myapp\index.html" />
+    <Content Include="scripts\myapp\main.js" />
+    <Content Include="scripts\myapp\polyfills.js" />
+    <Content Include="scripts\myapp\runtime.js" />
+    <Content Include="scripts\myapp\styles.js" />
+    <Content Include="scripts\myapp\vendor.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -222,6 +229,11 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <None Include="Properties\PublishProfiles\ContentUpdateAI - Web Deploy.pubxml" />
+    <Content Include="scripts\myapp\main.js.map" />
+    <Content Include="scripts\myapp\polyfills.js.map" />
+    <Content Include="scripts\myapp\runtime.js.map" />
+    <Content Include="scripts\myapp\styles.js.map" />
+    <Content Include="scripts\myapp\vendor.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
