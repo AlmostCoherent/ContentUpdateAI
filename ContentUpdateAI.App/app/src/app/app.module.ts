@@ -7,12 +7,14 @@ import { FormsModule } from '@angular/forms';
 
 import { LuisResultsComponent } from './components/luis-results/luis-results.component';
 import { ContentDisplayComponent } from './components/content-display/content-display.component';
+import { SignalRResponseComponent } from './components/signal-r-response/signal-r-response.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LuisResultsComponent,
-    ContentDisplayComponent
+    ContentDisplayComponent,
+    SignalRResponseComponent
   ],
   imports: [
     BrowserModule,

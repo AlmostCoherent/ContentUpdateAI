@@ -17,7 +17,7 @@ namespace ContentUpdateAI.EF6.Content
                 var contentModel = from temp in context.Contents select temp;
 
                 contentModelList = contentModel.ToList();
-                }
+            }
 
             return contentModelList;
         }

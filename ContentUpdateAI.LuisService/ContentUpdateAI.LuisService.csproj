@@ -118,11 +118,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GetLuisResponse.cs" />
-    <Compile Include="IGetLuisResponse.cs" />
     <Compile Include="LuisModel.cs" />
     <Compile Include="LuisEndPoints.cs" />
-    <Compile Include="LuisProcessedModel.cs" />
-    <Compile Include="LuisResponseProcessor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -41,7 +41,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-content-display [currentContent]=\"currentContent\"></app-content-display>\r\n<app-luis-results [currentContent]=\"currentContent\"></app-luis-results>\r\n"
+module.exports = "<app-content-display [currentContent]=\"currentContent\"></app-content-display>\r\n<app-luis-results [currentContent]=\"currentContent\"></app-luis-results>\r\n<app-signal-r-response></app-signal-r-response>\r\n"
 
 /***/ }),
 
@@ -113,12 +113,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _components_luis_results_luis_results_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/luis-results/luis-results.component */ "./src/app/components/luis-results/luis-results.component.ts");
 /* harmony import */ var _components_content_display_content_display_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/content-display/content-display.component */ "./src/app/components/content-display/content-display.component.ts");
+/* harmony import */ var _components_signal_r_response_signal_r_response_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/signal-r-response/signal-r-response.component */ "./src/app/components/signal-r-response/signal-r-response.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -134,7 +136,8 @@ var AppModule = /** @class */ (function () {
             declarations: [
                 _app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"],
                 _components_luis_results_luis_results_component__WEBPACK_IMPORTED_MODULE_5__["LuisResultsComponent"],
-                _components_content_display_content_display_component__WEBPACK_IMPORTED_MODULE_6__["ContentDisplayComponent"]
+                _components_content_display_content_display_component__WEBPACK_IMPORTED_MODULE_6__["ContentDisplayComponent"],
+                _components_signal_r_response_signal_r_response_component__WEBPACK_IMPORTED_MODULE_7__["SignalRResponseComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -324,6 +327,85 @@ var LuisResultsComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/components/signal-r-response/signal-r-response.component.html":
+/*!*******************************************************************************!*\
+  !*** ./src/app/components/signal-r-response/signal-r-response.component.html ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  signal-r-response works!\n</p>\n"
+
+/***/ }),
+
+/***/ "./src/app/components/signal-r-response/signal-r-response.component.sass":
+/*!*******************************************************************************!*\
+  !*** ./src/app/components/signal-r-response/signal-r-response.component.sass ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvc2lnbmFsLXItcmVzcG9uc2Uvc2lnbmFsLXItcmVzcG9uc2UuY29tcG9uZW50LnNhc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/components/signal-r-response/signal-r-response.component.ts":
+/*!*****************************************************************************!*\
+  !*** ./src/app/components/signal-r-response/signal-r-response.component.ts ***!
+  \*****************************************************************************/
+/*! exports provided: SignalRResponseComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SignalRResponseComponent", function() { return SignalRResponseComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_services_signal_r_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/services/signal-r.service */ "./src/app/services/signal-r.service.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var SignalRResponseComponent = /** @class */ (function () {
+    function SignalRResponseComponent(_signalRService, http) {
+        var _this = this;
+        this._signalRService = _signalRService;
+        this.http = http;
+        this.startHttpRequest = function () {
+            _this.http.get('/api/signalr')
+                .subscribe(function (res) {
+                console.log(res);
+            });
+        };
+    }
+    SignalRResponseComponent.prototype.ngOnInit = function () {
+        this._signalRService.startConnection();
+        this._signalRService.addTransferChartDataListener();
+        this.startHttpRequest();
+    };
+    SignalRResponseComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-signal-r-response',
+            template: __webpack_require__(/*! ./signal-r-response.component.html */ "./src/app/components/signal-r-response/signal-r-response.component.html"),
+            styles: [__webpack_require__(/*! ./signal-r-response.component.sass */ "./src/app/components/signal-r-response/signal-r-response.component.sass")]
+        }),
+        __metadata("design:paramtypes", [src_app_services_signal_r_service__WEBPACK_IMPORTED_MODULE_1__["SignalRService"], _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+    ], SignalRResponseComponent);
+    return SignalRResponseComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/models/enums.ts":
 /*!*********************************!*\
   !*** ./src/app/models/enums.ts ***!
@@ -499,6 +581,57 @@ var LuisService = /** @class */ (function () {
         })
     ], LuisService);
     return LuisService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/signal-r.service.ts":
+/*!**********************************************!*\
+  !*** ./src/app/services/signal-r.service.ts ***!
+  \**********************************************/
+/*! exports provided: SignalRService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SignalRService", function() { return SignalRService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _aspnet_signalr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @aspnet/signalr */ "./node_modules/@aspnet/signalr/dist/esm/index.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+var SignalRService = /** @class */ (function () {
+    function SignalRService() {
+        var _this = this;
+        this.startConnection = function () {
+            _this.hubConnection = new _aspnet_signalr__WEBPACK_IMPORTED_MODULE_1__["HubConnectionBuilder"]()
+                .withUrl('/api/v1/get-response')
+                .build();
+            _this.hubConnection
+                .start()
+                .then(function () { return console.log('Connection started'); })
+                .catch(function (err) { return console.log('Error while starting connection: ' + err); });
+        };
+        this.addTransferChartDataListener = function () {
+            _this.hubConnection.on('transferchartdata', function (data) {
+                _this.data = data;
+                console.log(data);
+            });
+        };
+    }
+    SignalRService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        })
+    ], SignalRService);
+    return SignalRService;
 }());
 
 

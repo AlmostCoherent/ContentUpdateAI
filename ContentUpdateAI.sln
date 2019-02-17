@@ -19,6 +19,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContentUpdateAI.Shared", "C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContentUpdateAI.LuisService.Tests", "ContentUpdateAI.LuisService.Tests\ContentUpdateAI.LuisService.Tests.csproj", "{50E6EF69-F49F-4C79-9840-B73126146B33}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContentUpdateAI.SignalR", "ContentUpdateAI.SignalR\ContentUpdateAI.SignalR.csproj", "{4B24452D-2DEE-4E1D-BA76-045D2A41AEBC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4A7F2C1F-A1A9-41E9-A5CD-9C144D2BDF00}"
+	ProjectSection(SolutionItems) = preProject
+		build.cake = build.cake
+		build.ps1 = build.ps1
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +65,10 @@ Global
 		{50E6EF69-F49F-4C79-9840-B73126146B33}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{50E6EF69-F49F-4C79-9840-B73126146B33}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{50E6EF69-F49F-4C79-9840-B73126146B33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B24452D-2DEE-4E1D-BA76-045D2A41AEBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B24452D-2DEE-4E1D-BA76-045D2A41AEBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B24452D-2DEE-4E1D-BA76-045D2A41AEBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B24452D-2DEE-4E1D-BA76-045D2A41AEBC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

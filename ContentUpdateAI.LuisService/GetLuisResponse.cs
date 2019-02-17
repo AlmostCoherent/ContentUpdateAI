@@ -23,6 +23,7 @@ namespace ContentUpdateAI.LuisService
 
                 string jsonResponse = GetHttpResponse.GetJsonResponse(_luisUrl, queryString);
                 LuisModel luisModel = JsonConvert.DeserializeObject<LuisModel>(jsonResponse);
+                luisModel.responseJson = jsonResponse;
                 returnResponse.Add(luisModel);
             }
 

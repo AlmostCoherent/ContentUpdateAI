@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Xml.Linq;
 
 namespace ContentUpdateAI.LuisService
 {
@@ -10,6 +11,8 @@ namespace ContentUpdateAI.LuisService
         public TopScoringIntent TopScoringIntent { get; set; }
         public List<LuisEntity> Entities { get; set; }
         public List<CompositeEntities> CompositeEntities { get; set; }
+        public string responseJson { get; set; }
+        public XNode responseXml { get; set; } 
     }
 
     public class CompositeEntities
